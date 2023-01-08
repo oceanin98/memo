@@ -51,8 +51,8 @@ const Edit = ({ Students, selectedStudent, setStudents, setIsEditing }) => {
   return (
     <div className="small-container">
       <form onSubmit={handleUpdate}>
-        <h1>Edit </h1>
-        <label htmlFor="Name">Name</label>
+        <h1>수정 </h1>
+        <label htmlFor="Name">이름</label>
         <input
           id="Name"
           type="text"
@@ -60,7 +60,7 @@ const Edit = ({ Students, selectedStudent, setStudents, setIsEditing }) => {
           value={Name}
           onChange={e => setName(e.target.value)}
         />
-        <label htmlFor="Question">Question</label>
+        <label htmlFor="Question">질문</label>
         <input
           id="Question"
           type="text"
@@ -68,8 +68,8 @@ const Edit = ({ Students, selectedStudent, setStudents, setIsEditing }) => {
           value={Question}
           onChange={e => setQuestion(e.target.value)}
         />
-        <label htmlFor="Text">Text</label>
-        <input
+        <label htmlFor="Text">내용</label>
+        <textarea
           id="Text"
           type="Text"
           name="Text"

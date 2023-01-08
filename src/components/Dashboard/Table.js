@@ -22,7 +22,7 @@ const Table = ({ Students, handleEdit, handleDelete ,handleQuestion}) => {
             <th>No.</th>
             <th>Name</th>
             <th>Question</th>
-            <th>Text</th>
+            {/* <th>Text</th> */}
             <th colSpan={2} className="text-center">
               편집
             </th>
@@ -38,7 +38,7 @@ const Table = ({ Students, handleEdit, handleDelete ,handleQuestion}) => {
                 <td onClick={() => handleQuestion(Student.id)}
                 >{Student.Question}</td>
 
-                <td>{Student.Text}</td>
+                {/* <td>{Student.Text}</td> */}
 
                 <td className="text-right">
                   <button

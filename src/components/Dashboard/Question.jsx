@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 
-// const Question = ({ Students, setStudents, setIsAdding }) => {
-//   const [Name, setName] = useState('');
-//   const [Question, setQuestion] = useState('');
-//   const [Text, setText] = useState('');
 
   const Question = ({ Students, selectedStudent, setStudents, setIsQuestion}) => {
     const id = selectedStudent.id;
@@ -17,14 +13,20 @@ import React, { useState } from 'react';
       currency: 'USD',
       minimumFractionDigits: null,
     });
+    const style = {
+        maxHeight:'100px',
+        minHeight:'38px',
+          resize:'none',
+          padding:'9px',
+          boxSizing:'border-box',
+          fontSize:'15px'};
+    
 
-    localStorage.setItem('Students_data', JSON.stringify(Students));
-    setStudents(Students);
-    setIsQuestion(true);
 
     return (
         
         <div className="small-container">
+            
           <form >
             <h1>글 보기 </h1>
             <label htmlFor="Name">Name</label>
@@ -33,7 +35,7 @@ import React, { useState } from 'react';
           type="text"
           name="Name"
           value={Name}
-        //   onChange={e => setName(e.target.value)}
+        readOnly={true}
         />
            
             <label htmlFor="Question">Question</label>
@@ -42,15 +44,17 @@ import React, { useState } from 'react';
               type="text"
               name="Question"
               value={Question}
-             
+              readOnly={true}
             />
             <label htmlFor="Text">Text</label>
-            <input
+            
+            <textarea 
+            style={style}
               id="Text"
               type="Text"
               name="Text"
               value={Text}
-              
+              readOnly={true}
             />
             
             <div style={{ marginTop: '30px' }}>
@@ -59,7 +63,7 @@ import React, { useState } from 'react';
                 className="muted-button"
                 type="button"
                 value="Cancel"
-                onclick={()=> setIsQuestion(false)}
+                onClick={()=> setIsQuestion(false)}
               />
             </div>
           </form>

@@ -13,7 +13,6 @@ import Question from './Question';
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
 // import "./styles.css";
 
-
 import { studentsData } from '../../data';
 
 const Dashboard = ({ setIsAuthenticated }) => {
@@ -72,10 +71,12 @@ const Dashboard = ({ setIsAuthenticated }) => {
   };
 
   return (
+    
     <div className="container">
 
-      
-      {!isAdding && !isEditing && (
+
+    
+      {!isAdding && !isEditing && !isQuestion && (
         <>
         
           <Header

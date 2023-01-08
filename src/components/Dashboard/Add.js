@@ -64,8 +64,8 @@ const Add = ({ Students, setStudents, setIsAdding }) => {
           value={Question}
           onChange={e => setQuestion(e.target.value)}
         />
-        <FloatingLabel htmlFor="Textarea">내용
-        <input
+        <label htmlFor="Text">내용</label>
+        <textarea
           id="Text"
           type="Text"
           name="Text"
@@ -74,7 +74,7 @@ const Add = ({ Students, setStudents, setIsAdding }) => {
           style={{ height: '100px' }}
           
         />
-        </FloatingLabel>
+       
         
         
         <div style={{ marginTop: '30px' }}>
