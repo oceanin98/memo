@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 const Add = ({ Students, setStudents, setIsAdding }) => {
   const [Name, setName] = useState('');
@@ -62,14 +64,17 @@ const Add = ({ Students, setStudents, setIsAdding }) => {
           value={Question}
           onChange={e => setQuestion(e.target.value)}
         />
-        <label htmlFor="Text">내용</label>
+        <FloatingLabel htmlFor="Textarea">내용
         <input
           id="Text"
           type="Text"
           name="Text"
           value={Text}
           onChange={e => setText(e.target.value)}
+          style={{ height: '100px' }}
+          
         />
+        </FloatingLabel>
         
         
         <div style={{ marginTop: '30px' }}>

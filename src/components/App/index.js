@@ -3,7 +3,13 @@ import React, { useState, useEffect } from 'react';
 import Login from '../Login';
 import Dashboard from '../Dashboard';
 
+
+
 const App = () => {
+
+
+
+  
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
@@ -11,13 +17,22 @@ const App = () => {
   }, []);
 
   return (
+
     <>
+
+
       {isAuthenticated ? (
+
         <Dashboard setIsAuthenticated={setIsAuthenticated} />
       ) : (
         <Login setIsAuthenticated={setIsAuthenticated} />
       )}
+
+
+
+
     </>
+
   );
 };
 

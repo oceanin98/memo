@@ -1,6 +1,8 @@
 import React from 'react';
+import Accordion from 'react-bootstrap/Accordion';
 
-const Table = ({ Students, handleEdit, handleDelete }) => {
+
+const Table = ({ Students, handleEdit, handleDelete ,handleQuestion}) => {
   Students.forEach((Student, i) => {
     Student.id = i + 1;
   });
@@ -12,6 +14,7 @@ const Table = ({ Students, handleEdit, handleDelete }) => {
   });
 
   return (
+
     <div className="contain-table">
       <table className="striped-table">
         <thead>
@@ -31,8 +34,12 @@ const Table = ({ Students, handleEdit, handleDelete }) => {
               <tr key={Student.id}>
                 <td>{i + 1}</td>
                 <td>{Student.Name}</td>
-                <td>{Student.Question}</td>
+
+                <td onClick={() => handleQuestion(Student.id)}
+                >{Student.Question}</td>
+
                 <td>{Student.Text}</td>
+
                 <td className="text-right">
                   <button
                     onClick={() => handleEdit(Student.id)}
